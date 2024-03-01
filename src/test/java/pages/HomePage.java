@@ -26,6 +26,7 @@ public class HomePage {
     By heartIcon = By.className("android.widget.CheckBox");
     By favoritesTab = By.id("com.pashapuma.pix.wallpapers:id/favorites");
     By wallpaperImg = By.id("com.pashapuma.pix.wallpapers:id/wallpaper_image");
+    By favoritesStateText = By.id("com.pashapuma.pix.wallpapers:id/state_text");
 
     public HomePage(AppiumDriver driver) {
 
@@ -71,5 +72,9 @@ public class HomePage {
 
     public void checkFavoritesList() {
         elementHelper.checkVisible(wallpaperImg);
+    }
+
+    public void checkEmptyFavoritesList() {
+        elementHelper.checkVisible(favoritesStateText);
     }
 }

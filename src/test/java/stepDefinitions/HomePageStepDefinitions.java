@@ -44,4 +44,9 @@ public class HomePageStepDefinitions {
     public void checkThatTheFavoritesListAppears() {
         homePage.checkFavoritesList();
     }
+
+    @Then("Check that the empty favorites list appears")
+    public void checkThatTheEmptyFavoritesListAppears() {
+        homePage.checkEmptyFavoritesList();
+    }
 }

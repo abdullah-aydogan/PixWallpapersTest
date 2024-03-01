@@ -10,3 +10,7 @@ Feature: Home Page Test Senarios
     When Click the heart icon of a random image
     When Switch to the favorites tab
     Then Check that the favorites list appears
+
+  Scenario: Switch to Favorites Tab Without Adding Images to Favorites
+    When Switch to the favorites tab
+    Then Check that the empty favorites list appears
