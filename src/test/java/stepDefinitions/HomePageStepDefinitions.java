@@ -49,4 +49,29 @@ public class HomePageStepDefinitions {
     public void checkThatTheEmptyFavoritesListAppears() {
         homePage.checkEmptyFavoritesList();
     }
+
+    @When("Click on the search icon")
+    public void clickOnTheSearchIcon() {
+        homePage.clickSearchIcon();
+    }
+
+    @When("Type blue in the EditText field")
+    public void typeBlueInTheEditTextField() {
+        homePage.writeBlueInEditTxt();
+    }
+
+    @Then("Check the search result {string}")
+    public void checkTheSearchResult(String result) {
+        homePage.checkSearchResult(result);
+    }
+
+    @When("Type dsd in the EditText field")
+    public void typeDsdInTheEditTextField() {
+        homePage.writeDsdInEditTxt();
+    }
+
+    @Then("Check the search empty result {string}")
+    public void checkTheSearchEmptyResult(String result) {
+        homePage.checkSearchEmptyResult(result);
+    }
 }

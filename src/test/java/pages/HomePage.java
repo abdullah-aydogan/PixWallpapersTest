@@ -26,7 +26,9 @@ public class HomePage {
     By heartIcon = By.className("android.widget.CheckBox");
     By favoritesTab = By.id("com.pashapuma.pix.wallpapers:id/favorites");
     By wallpaperImg = By.id("com.pashapuma.pix.wallpapers:id/wallpaper_image");
-    By favoritesStateText = By.id("com.pashapuma.pix.wallpapers:id/state_text");
+    By stateText = By.id("com.pashapuma.pix.wallpapers:id/state_text");
+    By searchIcon = By.id("com.pashapuma.pix.wallpapers:id/search");
+    By searchEditText = By.id("com.pashapuma.pix.wallpapers:id/search_src_text");
 
     public HomePage(AppiumDriver driver) {
 
@@ -75,6 +77,26 @@ public class HomePage {
     }
 
     public void checkEmptyFavoritesList() {
-        elementHelper.checkVisible(favoritesStateText);
+        elementHelper.checkVisible(stateText);
+    }
+
+    public void clickSearchIcon() {
+        elementHelper.click(searchIcon);
+    }
+
+    public void writeBlueInEditTxt() {
+        elementHelper.sendKey(searchEditText, "blue");
+    }
+
+    public void writeDsdInEditTxt() {
+        elementHelper.sendKey(searchEditText, "dsd");
+    }
+
+    public void checkSearchResult(String result) {
+        elementHelper.checkVisible(wallpaperImg);
+    }
+
+    public void checkSearchEmptyResult(String result) {
+        elementHelper.checkVisible(stateText);
     }
 }

@@ -14,3 +14,19 @@ Feature: Home Page Test Senarios
   Scenario: Switch to Favorites Tab Without Adding Images to Favorites
     When Switch to the favorites tab
     Then Check that the empty favorites list appears
+
+  Scenario Outline: Search for Wallpaper
+    When Click on the search icon
+    When Type blue in the EditText field
+    Then Check the search result "<Result>"
+    Examples:
+    |Result|
+    |Sonuc bulundu|
+
+  Scenario Outline: Search for Invalid Wallpaper
+    When Click on the search icon
+    When Type dsd in the EditText field
+    Then Check the search empty result "<Result>"
+    Examples:
+    |Result|
+    |Sonuc bulunamadi|
