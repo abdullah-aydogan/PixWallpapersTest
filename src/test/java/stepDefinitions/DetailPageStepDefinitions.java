@@ -27,12 +27,12 @@ public class DetailPageStepDefinitions {
 
     @Given("Get count images")
     public void getCountOfImagesListed() {
-        detailPage.getImageCount();
+        detailPage.getItemCount();
     }
 
     @When("Click on the random image from the list")
     public void clickOnTheRandomImageFromTheList() {
-        detailPage.clickRandomImage();
+        detailPage.clickRandomItem();
     }
 
     @When("Click on the information button")
@@ -73,5 +73,50 @@ public class DetailPageStepDefinitions {
     @Then("Check return home page")
     public void checkReturnHomePage() {
         detailPage.checkReturnHomePage();
+    }
+
+    @Given("Switch to collections tab")
+    public void switchToCollectionsTab() {
+        detailPage.switchCollectionsTab();
+    }
+
+    @When("Get count collections")
+    public void getCountCollections() {
+        detailPage.getItemCount();
+    }
+
+    @When("Click random collection")
+    public void clickRandomCollection() {
+        detailPage.clickRandomItem();
+    }
+
+    @When("Get count collection images")
+    public void getCountCollectionImages() {
+        detailPage.getItemCount();
+    }
+
+    @When("Click random collection image")
+    public void clickRandomCollectionImage() {
+        detailPage.clickRandomItem();
+    }
+
+    @When("Save image")
+    public void saveImage() {
+        detailPage.saveImage();
+    }
+
+    @When("Apply image to phone home screen")
+    public void applyImageToPhoneHomeScreen() {
+        detailPage.applyImage();
+    }
+
+    @When("Return to home page")
+    public void returnToHomePage() {
+        detailPage.returnHomePage();
+    }
+
+    @Then("Check return app home page")
+    public void checkReturnAppHomePage() {
+        detailPage.checkReturnAppHomePage();
     }
 }

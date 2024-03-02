@@ -1,5 +1,6 @@
 package pages;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,21 +17,26 @@ public class DetailPage {
     public WebDriverWait wait;
     public ElementHelper elementHelper;
 
-    public int imageCount = 0;
+    public int itemCount = 0;
 
     By notificationWindow = By.id("com.android.permissioncontroller:id/grant_dialog");
     By notificationDenyButton = By.id("com.android.permissioncontroller:id/permission_deny_button");
     By homePageTab = By.id("com.pashapuma.pix.wallpapers:id/wallpapers");
-    By recyclerView = By.id("com.pashapuma.pix.wallpapers:id/recycler_view");
-    By imageView = By.className("android.widget.ImageView");
+    By recyclerView = new AppiumBy.ByAndroidUIAutomator("new UiSelector().resourceId(\"com.pashapuma.pix.wallpapers:id/recycler_view\")");
+    By imageView = new AppiumBy.ByAndroidUIAutomator("new UiSelector().resourceId(\"com.pashapuma.pix.wallpapers:id/wallpaper_image\")");
     By infoButton = By.id("com.pashapuma.pix.wallpapers:id/details");
     By infoScreen = By.id("com.pashapuma.pix.wallpapers:id/container");
     By touchOutside = By.id("com.pashapuma.pix.wallpapers:id/touch_outside");
     By applyButton = By.id("com.pashapuma.pix.wallpapers:id/apply");
     By applyScreen = By.id("com.pashapuma.pix.wallpapers:id/parentPanel");
-    By cancelButton = By.id("android:id/button2");
+    By cancelButton = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"İptal\")");
     By closeButton = By.className("android.widget.ImageButton");
-
+    By collectionsTab = By.id("com.pashapuma.pix.wallpapers:id/collections");
+    By downloadButton = By.id("com.pashapuma.pix.wallpapers:id/download");
+    By downloadText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Kaydediliyor…\")");
+    By applyHomePageBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Ana Ekrana için ayarla\")");
+    By okBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Tamam\")");
+    By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Uygulanıyor…\")");
 
     public DetailPage(AppiumDriver driver) {
 
@@ -51,16 +57,16 @@ public class DetailPage {
         elementHelper.checkVisible(homePageTab);
     }
 
-    public void getImageCount() {
+    public void getItemCount() {
 
         WebElement elements = driver.findElement(recyclerView);
         List<WebElement> allItems = elements.findElements(imageView);
 
-        imageCount = allItems.size();
-        System.out.println("Resim Adeti : " + imageCount);
+        itemCount = allItems.size();
+        System.out.println("Bulunan Eleman Adeti : " + itemCount);
     }
 
-    public void clickRandomImage() {
+    public void clickRandomItem() {
 
         WebElement elements = driver.findElement(recyclerView);
         List<WebElement> allItems = elements.findElements(imageView);
@@ -68,8 +74,8 @@ public class DetailPage {
         Random rnd = new Random();
         int randomIndex = rnd.nextInt(allItems.size());
 
-        WebElement image = allItems.get(randomIndex);
-        image.click();
+        WebElement item = allItems.get(randomIndex);
+        item.click();
     }
 
     public void clickInfoButton() {
@@ -101,6 +107,32 @@ public class DetailPage {
     }
 
     public void checkReturnHomePage() {
+        elementHelper.checkVisible(homePageTab);
+    }
+
+    public void switchCollectionsTab() {
+        elementHelper.click(collectionsTab);
+    }
+
+    public void saveImage() {
+        elementHelper.click(downloadButton);
+        elementHelper.checkVisible(downloadText);
+    }
+
+    public void applyImage() {
+        elementHelper.click(applyButton);
+        elementHelper.click(applyHomePageBtn);
+        elementHelper.click(okBtn);
+        elementHelper.checkVisible(applyText);
+    }
+
+    public void returnHomePage() {
+        elementHelper.click(closeButton);
+        elementHelper.click(closeButton);
+        elementHelper.click(homePageTab);
+    }
+
+    public void checkReturnAppHomePage() {
         elementHelper.checkVisible(homePageTab);
     }
 }

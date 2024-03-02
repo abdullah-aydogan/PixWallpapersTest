@@ -16,3 +16,14 @@ Feature: Detail Page Test Senarios
     When Click the cancel button
     When Click the close button
     Then Check return home page
+
+  Scenario: Click Random Image from Collections
+    Given Switch to collections tab
+    When Get count collections
+    When Click random collection
+    When Get count collection images
+    When Click random collection image
+    When Save image
+    When Apply image to phone home screen
+    When Return to home page
+    Then Check return app home page
