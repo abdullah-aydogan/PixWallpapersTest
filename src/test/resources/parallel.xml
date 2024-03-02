@@ -2,7 +2,8 @@
     <parameter name="browser" value="Android" />
     <test name="PixWallpapersText">
         <classes>
-            <class name="testRunners.Runner" />
+            <class name="testRunners.HomePageRunner" />
+            <class name="testRunners.DetailPageRunner" />
         </classes>
     </test>
 </suite>

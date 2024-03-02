@@ -4,10 +4,12 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.ConfigReader;
 import util.ElementHelper;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 
 public class HomePage {
@@ -15,6 +17,7 @@ public class HomePage {
     public AppiumDriver driver;
     public WebDriverWait wait;
     public ElementHelper elementHelper;
+    public static Properties properties;
 
     public int imageCount = 0;
 
@@ -35,6 +38,8 @@ public class HomePage {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.elementHelper = new ElementHelper(driver);
+
+        properties = ConfigReader.getProperties();
     }
 
     public void checkNotificationWindow() {
@@ -85,11 +90,11 @@ public class HomePage {
     }
 
     public void writeBlueInEditTxt() {
-        elementHelper.sendKey(searchEditText, "blue");
+        elementHelper.sendKey(searchEditText, properties.getProperty("searchTextBlue"));
     }
 
     public void writeDsdInEditTxt() {
-        elementHelper.sendKey(searchEditText, "dsd");
+        elementHelper.sendKey(searchEditText, properties.getProperty("searchTextDsd"));
     }
 
     public void checkSearchResult(String result) {
