@@ -8,8 +8,7 @@ import util.DriverFactory;
 @CucumberOptions(
         features = {"src/test/java/features/homePage.feature"},
         glue = {"stepDefinitions", "util"},
-        tags = "",
-        plugin = {"summary", "pretty", "html:reports/cucumberReport/reports.html"}
+        plugin = {"summary", "pretty", "html:reports/cucumberReport/homePageReport.html"}
 )
 public class HomePageRunner extends AbstractTestNGCucumberTests {
 

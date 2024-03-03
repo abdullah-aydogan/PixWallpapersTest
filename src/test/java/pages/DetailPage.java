@@ -36,7 +36,7 @@ public class DetailPage {
     By downloadText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Kaydediliyor…\")");
     By applyHomePageBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Ana Ekrana için ayarla\")");
     By okBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Tamam\")");
-    By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Duvar kağıdı uygulandı.\")");
+    By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Uygulanıyor…\")");
 
     public DetailPage(AppiumDriver driver) {
 
