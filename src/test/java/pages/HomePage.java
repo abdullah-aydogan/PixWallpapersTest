@@ -21,12 +21,11 @@ public class HomePage {
 
     public int imageCount = 0;
 
-    By notificationWindow = By.id("com.android.permissioncontroller:id/grant_dialog");
-    By notificationDenyButton = By.id("com.android.permissioncontroller:id/permission_deny_button");
     By homePageTab = By.id("com.pashapuma.pix.wallpapers:id/wallpapers");
     By recyclerView = By.id("com.pashapuma.pix.wallpapers:id/recycler_view");
     By cardView = By.className("androidx.cardview.widget.CardView");
     By heartIcon = By.className("android.widget.CheckBox");
+    By favButton = By.id("com.pashapuma.pix.wallpapers:id/fav_button");
     By favoritesTab = By.id("com.pashapuma.pix.wallpapers:id/favorites");
     By wallpaperImg = By.id("com.pashapuma.pix.wallpapers:id/wallpaper_image");
     By stateText = By.id("com.pashapuma.pix.wallpapers:id/state_text");
@@ -40,14 +39,6 @@ public class HomePage {
         this.elementHelper = new ElementHelper(driver);
 
         properties = ConfigReader.getProperties();
-    }
-
-    public void checkNotificationWindow() {
-        elementHelper.checkVisible(notificationWindow);
-    }
-
-    public void skipNotificationWindow() {
-        elementHelper.click(notificationDenyButton);
     }
 
     public void checkHomePage() {
@@ -78,7 +69,10 @@ public class HomePage {
     }
 
     public void checkFavoritesList() {
+
         elementHelper.checkVisible(wallpaperImg);
+        elementHelper.click(favButton);
+        elementHelper.checkVisible(stateText);
     }
 
     public void checkEmptyFavoritesList() {

@@ -1,8 +1,6 @@
 Feature: Detail Page Test Senarios
 
   Background: Open Home Page
-    Given Check notification permission window
-    When Skip notification window
     Then Check that the home page
 
   Scenario: Click On a Random Image

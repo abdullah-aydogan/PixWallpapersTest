@@ -19,8 +19,6 @@ public class DetailPage {
 
     public int itemCount = 0;
 
-    By notificationWindow = By.id("com.android.permissioncontroller:id/grant_dialog");
-    By notificationDenyButton = By.id("com.android.permissioncontroller:id/permission_deny_button");
     By homePageTab = By.id("com.pashapuma.pix.wallpapers:id/wallpapers");
     By recyclerView = new AppiumBy.ByAndroidUIAutomator("new UiSelector().resourceId(\"com.pashapuma.pix.wallpapers:id/recycler_view\")");
     By imageView = new AppiumBy.ByAndroidUIAutomator("new UiSelector().resourceId(\"com.pashapuma.pix.wallpapers:id/wallpaper_image\")");
@@ -43,14 +41,6 @@ public class DetailPage {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.elementHelper = new ElementHelper(driver);
-    }
-
-    public void checkNotificationWindow() {
-        elementHelper.checkVisible(notificationWindow);
-    }
-
-    public void skipNotificationWindow() {
-        elementHelper.click(notificationDenyButton);
     }
 
     public void checkHomePage() {

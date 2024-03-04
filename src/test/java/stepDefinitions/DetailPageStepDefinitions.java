@@ -10,16 +10,6 @@ public class DetailPageStepDefinitions {
 
     public DetailPage detailPage = new DetailPage(DriverFactory.getDriver());
 
-    @Given("Check notification permission window")
-    public void checkNotificationPermissionWindow() {
-        detailPage.checkNotificationWindow();
-    }
-
-    @When("Skip notification window")
-    public void skipNotificationWindow() {
-        detailPage.skipNotificationWindow();
-    }
-
     @Then("Check that the home page")
     public void checkThatTheHomePage() {
         detailPage.checkHomePage();

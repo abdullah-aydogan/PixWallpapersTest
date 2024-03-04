@@ -10,16 +10,6 @@ public class HomePageStepDefinitions {
 
     public HomePage homePage = new HomePage(DriverFactory.getDriver());
 
-    @Given("See notification permission window")
-    public void seeNotificationPermissionWindow() {
-        homePage.checkNotificationWindow();
-    }
-
-    @When("Skip notification permission window")
-    public void skipNotificationPermissionWindow() {
-        homePage.skipNotificationWindow();
-    }
-
     @Then("Check that the home page opens")
     public void checkThatTheHomePageOpens() {
         homePage.checkHomePage();

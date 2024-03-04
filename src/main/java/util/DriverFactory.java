@@ -1,6 +1,7 @@
 package util;
 
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -23,6 +24,7 @@ public class DriverFactory {
         capabilities.setCapability("deviceName", "emulator-5554");
         capabilities.setCapability("appPackage", "com.pashapuma.pix.wallpapers");
         capabilities.setCapability("appActivity", "com.pashapuma.pix.wallpapers.MainActivity");
+        capabilities.setCapability("noReset", "true");
 
         try {
             driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
@@ -34,6 +36,14 @@ public class DriverFactory {
 
         int impWait = Integer.parseInt(properties.getProperty("implicityWait"));
         driver.manage().timeouts().implicitlyWait(impWait, TimeUnit.SECONDS);
+
+        try {
+            driver.switchTo().alert().dismiss();
+        }
+
+        catch (NoAlertPresentException e) {
+            System.out.println("Bildirim izni penceresi bulunamadı.");
+        }
 
         return getDriver();
     }

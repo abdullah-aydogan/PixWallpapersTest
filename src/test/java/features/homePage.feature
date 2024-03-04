@@ -1,8 +1,6 @@
 Feature: Home Page Test Senarios
 
   Background: Go to Home Page
-    Given See notification permission window
-    When Skip notification permission window
     Then Check that the home page opens
 
   Scenario: Add a Random Image to Favorites
