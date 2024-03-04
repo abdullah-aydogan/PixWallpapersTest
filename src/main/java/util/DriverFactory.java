@@ -21,10 +21,11 @@ public class DriverFactory {
         capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "emulator-5554");
+        capabilities.setCapability("deviceName", "android");
         capabilities.setCapability("appPackage", "com.pashapuma.pix.wallpapers");
         capabilities.setCapability("appActivity", "com.pashapuma.pix.wallpapers.MainActivity");
         capabilities.setCapability("noReset", "true");
+        capabilities.setCapability("ignoreHiddenApiPolicyError", "true");
 
         try {
             driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
