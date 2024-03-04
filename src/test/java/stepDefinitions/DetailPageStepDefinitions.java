@@ -8,6 +8,8 @@ import util.DriverFactory;
 
 public class DetailPageStepDefinitions {
 
+    // Detay sayfası için gerekli test adımlarının tanımlandığı sınıf (features dosyası ile ilişkili)
+
     public DetailPage detailPage = new DetailPage(DriverFactory.getDriver());
 
     @Then("Check that the home page")

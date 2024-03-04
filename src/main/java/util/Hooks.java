@@ -11,6 +11,7 @@ public class Hooks {
     public AppiumDriver driver;
     public Properties properties;
 
+    // Test öncesinde properties ve driver tanımlamaları yapılır
     @Before
     public void before() {
 
@@ -18,6 +19,7 @@ public class Hooks {
         driver = DriverFactory.initializeDriver();
     }
 
+    // Test sonrası driver kapatılır
     @After
     public void after() {
         driver.quit();

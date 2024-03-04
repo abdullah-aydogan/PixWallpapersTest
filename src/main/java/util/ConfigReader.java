@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+// properties dosyasında yer alan özellikleri projede kullanılabilmek için gereken ConfigReader sınıfı
+
 public class ConfigReader {
 
     private static Properties properties;
@@ -14,6 +16,7 @@ public class ConfigReader {
         properties = new Properties();
 
         try {
+            // properties dosyası okunur
             FileInputStream fileInputStream = new FileInputStream("src/test/resources/config.properties");
 
             try {

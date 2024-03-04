@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+// Appium driver'ın çalışabilmesi için gereken DriverFactory sınıfı
+
 public class DriverFactory {
 
     public static AppiumDriver driver;
@@ -19,6 +21,8 @@ public class DriverFactory {
 
         properties = ConfigReader.getProperties();
         capabilities = new DesiredCapabilities();
+
+        // Testlerin emulator veya gerçek cihazda çalışabilmesi için gereken capability tanımlamaları
 
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "android");
@@ -35,9 +39,11 @@ public class DriverFactory {
             throw new RuntimeException(e);
         }
 
+        // Bekleme süresi tanımlaması
         int impWait = Integer.parseInt(properties.getProperty("implicityWait"));
         driver.manage().timeouts().implicitlyWait(impWait, TimeUnit.SECONDS);
 
+        // Uygulamada çıkan alert pencerelerini kapatmak için gereken kodlamalar
         try {
             driver.switchTo().alert().dismiss();
         }

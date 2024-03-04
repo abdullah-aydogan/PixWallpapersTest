@@ -22,6 +22,7 @@ public class ElementHelper {
         this.action = new Actions(driver);
     }
 
+    // Element bulma, kontrol etme
     public WebElement presenceElement(By key) {
         return wait.until(ExpectedConditions.presenceOfElementLocated(key));
     }
@@ -32,14 +33,17 @@ public class ElementHelper {
         return element;
     }
 
+    // Elemente tıklama
     public void click(By key) {
         findElement(key).click();
     }
 
+    // Elemente değer gönderme
     public void sendKey(By key, String text) {
         findElement(key).sendKeys(text);
     }
 
+    // Elementin görünürlüğünü kontrol etme
     public void checkVisible(By key) {
         wait.until(ExpectedConditions.presenceOfElementLocated(key));
     }

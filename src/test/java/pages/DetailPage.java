@@ -19,6 +19,9 @@ public class DetailPage {
 
     public int itemCount = 0;
 
+    // Detay sayfasında kullanılan elementlerin tanımlamaları
+    // ID, UiSelector(), className
+
     By homePageTab = By.id("com.pashapuma.pix.wallpapers:id/wallpapers");
     By recyclerView = new AppiumBy.ByAndroidUIAutomator("new UiSelector().resourceId(\"com.pashapuma.pix.wallpapers:id/recycler_view\")");
     By imageView = new AppiumBy.ByAndroidUIAutomator("new UiSelector().resourceId(\"com.pashapuma.pix.wallpapers:id/wallpaper_image\")");
@@ -47,6 +50,7 @@ public class DetailPage {
         elementHelper.checkVisible(homePageTab);
     }
 
+    // Listelenen elemanlarını sayısını al
     public void getItemCount() {
 
         WebElement elements = driver.findElement(recyclerView);
@@ -56,6 +60,7 @@ public class DetailPage {
         System.out.println("Bulunan Eleman Adeti : " + itemCount);
     }
 
+    // Listeden rastgele bir eleman seç
     public void clickRandomItem() {
 
         WebElement elements = driver.findElement(recyclerView);
@@ -76,6 +81,7 @@ public class DetailPage {
         elementHelper.checkVisible(infoScreen);
     }
 
+    // Boş bir alana tıkla
     public void clickOutside() {
         elementHelper.click(touchOutside);
     }

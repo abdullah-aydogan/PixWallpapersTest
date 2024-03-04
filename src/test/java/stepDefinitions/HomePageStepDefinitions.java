@@ -8,6 +8,8 @@ import util.DriverFactory;
 
 public class HomePageStepDefinitions {
 
+    // Anasayfa için gerekli test adımlarının tanımlandığı sınıf (features dosyası ile ilişkili)
+
     public HomePage homePage = new HomePage(DriverFactory.getDriver());
 
     @Then("Check that the home page opens")

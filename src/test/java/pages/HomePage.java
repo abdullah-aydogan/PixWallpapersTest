@@ -21,6 +21,9 @@ public class HomePage {
 
     public int imageCount = 0;
 
+    // Anasayfada kullanılan elementlerin tanımlamaları
+    // ID, className
+
     By homePageTab = By.id("com.pashapuma.pix.wallpapers:id/wallpapers");
     By recyclerView = By.id("com.pashapuma.pix.wallpapers:id/recycler_view");
     By cardView = By.className("androidx.cardview.widget.CardView");
@@ -45,6 +48,7 @@ public class HomePage {
         elementHelper.checkVisible(homePageTab);
     }
 
+    // Listelenen elemanlarını sayısını al
     public void getImageCount() {
 
         WebElement elements = driver.findElement(recyclerView);
@@ -54,6 +58,7 @@ public class HomePage {
         System.out.println("Resim Adeti : " + imageCount);
     }
 
+    // Listeden rastgele bir elemanın favori ikonunu seç
     public void clickHeartIcon() {
 
         List<WebElement> heartIcons = driver.findElements(heartIcon);
@@ -83,10 +88,12 @@ public class HomePage {
         elementHelper.click(searchIcon);
     }
 
+    // Arama bölümüne blue yaz
     public void writeBlueInEditTxt() {
         elementHelper.sendKey(searchEditText, properties.getProperty("searchTextBlue"));
     }
 
+    // Arama bölümüne anlamsız bir kelime yaz (dsd gibi)
     public void writeDsdInEditTxt() {
         elementHelper.sendKey(searchEditText, properties.getProperty("searchTextDsd"));
     }
