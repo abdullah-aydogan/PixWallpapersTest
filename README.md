@@ -33,7 +33,7 @@ Projede, yazılım test otomasyonunda kullanılan BDD (Behavior Driven Developme
 
 - Anasayfadaki listeden rastgele bir duvar kağıdına tıklama
 
-- Koleksiyonlar sekmesine geçip rastgele koleksiyonu seçimi yapma ve seçilen koleksiyondan rastgele duvar kağıdı seçimi yapma
+- Koleksiyonlar sekmesine geçip rastgele koleksiyon seçimi yapma ve seçilen koleksiyondan rastgele duvar kağıdı seçimi yapma
 ## İlişkili Projeler
 
 [Pix Wallpapers](https://github.com/pashapuma/Wallpapers_app)
@@ -45,7 +45,7 @@ Projede, yazılım test otomasyonunda kullanılan BDD (Behavior Driven Developme
   git clone https://github.com/abdullah-aydogan/PixWallpapersTest.git
 ```
 
-2 - Projeyi dizinine gidin.
+2 - Proje dizinine gidin.
 
 ```bash
   cd PixWallpapersTest
