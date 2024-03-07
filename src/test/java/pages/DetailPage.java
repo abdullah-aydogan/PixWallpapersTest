@@ -27,7 +27,6 @@ public class DetailPage {
     By imageView = new AppiumBy.ByAndroidUIAutomator("new UiSelector().resourceId(\"com.pashapuma.pix.wallpapers:id/wallpaper_image\")");
     By infoButton = By.id("com.pashapuma.pix.wallpapers:id/details");
     By infoScreen = By.id("com.pashapuma.pix.wallpapers:id/container");
-    By touchOutside = By.id("com.pashapuma.pix.wallpapers:id/touch_outside");
     By applyButton = By.id("com.pashapuma.pix.wallpapers:id/apply");
     By applyScreen = By.id("com.pashapuma.pix.wallpapers:id/parentPanel");
     By cancelButton = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"İptal\")");
@@ -37,7 +36,7 @@ public class DetailPage {
     By downloadText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Kaydediliyor…\")");
     By applyHomePageBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Ana Ekrana için ayarla\")");
     By okBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Tamam\")");
-    By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Uygulanıyor…\")");
+    By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Duvar kağıdı uygulandı.\")");
 
     public DetailPage(AppiumDriver driver) {
 
@@ -83,7 +82,7 @@ public class DetailPage {
 
     // Boş bir alana tıkla
     public void clickOutside() {
-        elementHelper.click(touchOutside);
+        driver.navigate().back();
     }
 
     public void clickApplyButton() {
