@@ -1,6 +1,8 @@
 
 # Pix Wallpapers Test Projesi
 
+![pix_wallpapers_play_store](https://github.com/abdullah-aydogan/PixWallpapersTest/assets/117303457/ef43ed73-dead-4b3f-bf5b-bfe63c5996c1)
+
 Bu test projesi, Google Play Store uygulama mağazasında yer alan **Pix Wallpapers** isimli duvar kağıdı uygulaması üzerinde test adımlarının koşulduğu bir projedir.
 
 Projede, yazılım test otomasyonunda kullanılan BDD (Behavior Driven Development - Davranış Odaklı Geliştirme) araçlarından biri olan **Cucumber Framework** kullanıldı.
