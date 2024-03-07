@@ -31,7 +31,7 @@ public class HomePage {
     By favButton = By.id("com.pashapuma.pix.wallpapers:id/fav_button");
     By favoritesTab = By.id("com.pashapuma.pix.wallpapers:id/favorites");
     By wallpaperImg = By.id("com.pashapuma.pix.wallpapers:id/wallpaper_image");
-    By stateText = By.id("com.pashapuma.pix.wallpapers:id/state_text");
+    By stateImage = By.id("com.pashapuma.pix.wallpapers:id/state_image");
     By searchIcon = By.id("com.pashapuma.pix.wallpapers:id/search");
     By searchEditText = By.id("com.pashapuma.pix.wallpapers:id/search_src_text");
 
@@ -77,11 +77,11 @@ public class HomePage {
 
         elementHelper.checkVisible(wallpaperImg);
         elementHelper.click(favButton);
-        elementHelper.checkVisible(stateText);
+        elementHelper.checkVisible(stateImage);
     }
 
     public void checkEmptyFavoritesList() {
-        elementHelper.checkVisible(stateText);
+        elementHelper.checkVisible(stateImage);
     }
 
     public void clickSearchIcon() {
@@ -103,6 +103,6 @@ public class HomePage {
     }
 
     public void checkSearchEmptyResult(String result) {
-        elementHelper.checkVisible(stateText);
+        elementHelper.checkVisible(stateImage);
     }
 }
