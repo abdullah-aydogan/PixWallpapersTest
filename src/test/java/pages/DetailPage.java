@@ -36,6 +36,12 @@ public class DetailPage {
     By downloadText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Kaydediliyor…\")");
     By applyHomePageBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Ana Ekrana için ayarla\")");
     By okBtn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Tamam\")");
+
+    // Gerçek cihazda Toast mesajın yakalanması için gerekli element tanımlaması
+    // By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Uygulanıyor…\")");
+
+    // Sanal cihazda Toast mesajın yakalanması için gerekli element tanımlaması
+    // Gerçek cihazda bu Toast mesaj yakalanmıyor.
     By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Duvar kağıdı uygulandı.\")");
 
     public DetailPage(AppiumDriver driver) {
