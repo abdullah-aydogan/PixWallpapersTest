@@ -13,9 +13,9 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <testNgVersion>7.9.0</testNgVersion>
-        <cucumberVersion>7.15.0</cucumberVersion>
-        <appiumVersion>9.1.0</appiumVersion>
+        <testNgVersion>7.10.2</testNgVersion>
+        <cucumberVersion>7.18.0</cucumberVersion>
+        <appiumVersion>9.2.3</appiumVersion>
     </properties>
 
     <dependencies>
@@ -24,13 +24,6 @@
             <artifactId>testng</artifactId>
             <version>${testNgVersion}</version>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testNgVersion}</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>

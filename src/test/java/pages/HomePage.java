@@ -1,6 +1,7 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,7 +15,7 @@ import java.util.Random;
 
 public class HomePage {
 
-    public AppiumDriver driver;
+    public AndroidDriver driver;
     public WebDriverWait wait;
     public ElementHelper elementHelper;
     public static Properties properties;
@@ -35,7 +36,7 @@ public class HomePage {
     By searchIcon = By.id("com.pashapuma.pix.wallpapers:id/search");
     By searchEditText = By.id("com.pashapuma.pix.wallpapers:id/search_src_text");
 
-    public HomePage(AppiumDriver driver) {
+    public HomePage(AndroidDriver driver) {
 
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));

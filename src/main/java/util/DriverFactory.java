@@ -1,11 +1,14 @@
 package util;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -13,35 +16,33 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
 
-    public static AppiumDriver driver;
+    public static AndroidDriver driver;
     public static Properties properties;
-    public static DesiredCapabilities capabilities;
+    public static UiAutomator2Options options;
 
-    public static AppiumDriver initializeDriver() {
+    public static AndroidDriver initializeDriver() {
 
         properties = ConfigReader.getProperties();
-        capabilities = new DesiredCapabilities();
+        options = new UiAutomator2Options();
 
         // Testlerin emulator veya gerçek cihazda çalışabilmesi için gereken capability tanımlamaları
 
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "android");
-        capabilities.setCapability("appPackage", "com.pashapuma.pix.wallpapers");
-        capabilities.setCapability("appActivity", "com.pashapuma.pix.wallpapers.MainActivity");
-        capabilities.setCapability("noReset", "true");
-        capabilities.setCapability("ignoreHiddenApiPolicyError", "true");
+        options.setCapability("platformName", "Android");
+        options.setCapability("deviceName", "android");
+        options.setCapability("appPackage", "com.pashapuma.pix.wallpapers");
+        options.setCapability("appActivity", "com.pashapuma.pix.wallpapers.MainActivity");
 
         try {
-            driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+            driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
         }
 
-        catch (MalformedURLException e) {
+        catch (URISyntaxException | MalformedURLException e) {
             throw new RuntimeException(e);
         }
 
         // Bekleme süresi tanımlaması
-        int impWait = Integer.parseInt(properties.getProperty("implicityWait"));
-        driver.manage().timeouts().implicitlyWait(impWait, TimeUnit.SECONDS);
+        int impWait = Integer.parseInt(properties.getProperty("implicitlyWait"));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(impWait));
 
         // Uygulamada çıkan alert pencerelerini kapatmak için gereken kodlamalar
         try {
@@ -55,7 +56,7 @@ public class DriverFactory {
         return getDriver();
     }
 
-    public static AppiumDriver getDriver() {
+    public static AndroidDriver getDriver() {
         return driver;
     }
 }

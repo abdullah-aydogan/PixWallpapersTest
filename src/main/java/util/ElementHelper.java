@@ -1,6 +1,9 @@
 package util;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,11 +14,11 @@ import java.time.Duration;
 
 public class ElementHelper {
 
-    public AppiumDriver driver;
+    public AndroidDriver driver;
     public WebDriverWait wait;
     public Actions action;
 
-    public ElementHelper(AppiumDriver driver) {
+    public ElementHelper(AndroidDriver driver) {
 
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -28,9 +31,7 @@ public class ElementHelper {
     }
 
     public WebElement findElement(By key) {
-
-        WebElement element = presenceElement(key);
-        return element;
+        return presenceElement(key);
     }
 
     // Elemente tıklama
@@ -40,6 +41,8 @@ public class ElementHelper {
 
     // Elemente değer gönderme
     public void sendKey(By key, String text) {
+
+        driver.pressKey(new KeyEvent(AndroidKey.BACK));
         findElement(key).sendKeys(text);
     }
 

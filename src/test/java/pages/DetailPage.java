@@ -2,6 +2,7 @@ package pages;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +14,7 @@ import java.util.Random;
 
 public class DetailPage {
 
-    public AppiumDriver driver;
+    public AndroidDriver driver;
     public WebDriverWait wait;
     public ElementHelper elementHelper;
 
@@ -44,7 +45,7 @@ public class DetailPage {
     // Gerçek cihazda bu Toast mesaj yakalanmıyor.
     By applyText = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Duvar kağıdı uygulandı.\")");
 
-    public DetailPage(AppiumDriver driver) {
+    public DetailPage(AndroidDriver driver) {
 
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));

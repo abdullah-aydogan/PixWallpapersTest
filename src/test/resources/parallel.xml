@@ -1,8 +1,13 @@
-<suite name="Parallel" verbose="1">
+<suite name="WallpaperTest" verbose="1">
     <parameter name="browser" value="Android" />
-    <test name="PixWallpapersText">
+    <test name="HomePageTests">
         <classes>
             <class name="testRunners.HomePageRunner" />
+        </classes>
+    </test>
+
+    <test name="DetailPageTests">
+        <classes>
             <class name="testRunners.DetailPageRunner" />
         </classes>
     </test>
