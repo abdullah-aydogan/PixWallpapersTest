@@ -10,7 +10,7 @@ Projede, yazılım test otomasyonunda kullanılan BDD (Behavior Driven Developme
 
 **Programlama Dili :** Java (JDK 21)
 
-**Framework :** Appium (9.1.0), Cucumber (7.15.0), TestNG (7.9.0)
+**Framework :** Appium (9.2.3), Cucumber (7.18.0), TestNG (7.10.2)
 ## Test Senaryoları
 
 **Anasayfa Test Senaryoları**
